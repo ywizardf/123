@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+        #box ul li{
+            background:url(img/1.jpg) no-repeat;
+            width:120px; height:115px;
+            float:left; cursor:pointer;
+        }
+        #box ul li.active{background:url(img/1.jpg) 0px -115px;}
+    </style>
+    <script src="js/echarts.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+</head>
+<body>
+<div id="title">出行安全指数评测</div>
+<div id="content">
+    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+    <b> 请您选择省份：</b>
+<select id="province" style="width: 120px ;align-content: center;" size="1">
+    <option value="0">北京</option>
+    <option value="1">天津</option>
+    <option value="2">上海</option>
+    <option value="3">重庆</option>
+    <option value="4">福建</option>
+    <option value="5">西藏</option>
+    <option value="6">贵州</option>
+    <option value="7">湖北</option>
+    <option value="8">湖南</option>
+    <option value="9">广东</option>
+    <option value="10">安徽</option>
+    <option value="11">四川</option>
+    <option value="12">新疆</option>
+    <option value="13">江苏</option>
+    <option value="14">吉林</option>
+    <option value="15">宁夏</option>
+    <option value="16">河北</option>
+    <option value="17">河南</option>
+    <option value="18">广西</option>
+    <option value="19">海南</option>
+    <option value="20">江西</option>
+    <option value="21">云南</option>
+    <option value="22">甘肃</option>
+    <option value="23">山东</option>
+    <option value="24">陕西</option>
+    <option value="25">浙江</option>
+    <option value="26">内蒙</option>
+    <option value="27">青海</option>
+    <option value="28">辽宁</option>
+    <option value="29">黑龙江</option>
+    <option value="30">山西</option>
+    <option value="31">台湾</option>
+    <option value="32">澳门</option>
+    <option value="33">香港</option>
+</select><br>
+    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+<b>请您选择城市：</b>
+<select id="city" style="width: 120px" size="1">
+</select><br>
+    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+    <b>您选择的结果是：</b><span id="result" style="color: red"></span>
+<input type="button" value="确定" onclick="myClick()" ></input>
+<br>
+    <br></br>
+<div id="box">
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+<div id="display"></span></div>
+</div>
+<div id="left2"></div>
+<div id="imgs"><img src="img/疫情词云.png" width="350" height="300"></div>
+<div id="new">
+    <h2>新闻：</h2>
+    <br>
+    <a href="https://news.cctv.com/2022/04/28/ARTIPhR6XawYqexKSKoIRrjw220428.shtml" target="_blank" >疫情波及31个省份，“五一”假期如何做好防疫？</a>
+    <br>
+    <a href="https://news.cctv.com/2022/04/29/ARTIhIi4v5jDPwRkfXWAv795220429.shtml?spm=C73544894212.P59511941341.EogkW3VdRtw6.2" target="_blank">国家卫健委：抗击新冠肺炎疫情是一场人民战争</a>
+    <br>
+    <a href="https://news.cctv.com/2022/04/29/ARTIkpg4KkOkii391r2hzMF7220429.shtml?spm=C94212.PBi4fu284lJm.EloxPVaffFMg.4" target="_blank" >美疾控中心抗体研究：约75%美国儿童及青少年曾感染新冠</a>
+    <br>
+    <a href="https://news.cctv.com/2022/04/29/ARTIxAzIRMw8lh3gri3Y9tV9220429.shtml?spm=C94212.PBi4fu284lJm.EqrnPf7WDfbU.5" target="_blank" >不明病因的儿童重症急性肝炎病例在欧洲持续增加</a>
+    <br>
+    <a href="https://news.cctv.com/2022/04/29/ARTIhw56yOrYtSUyG93mjXsX220429.shtml?spm=C94212.PBZrLs0D62ld.EKoevbmLqVHC.58" target="_blank" >国家卫健委：超7亿人完成加强免疫接种</a>
+    <br>
+    <a href="https://news.cctv.com/2022/04/29/ARTIrcQumKB3alwH9I3cTezC220429.shtml?spm=C94212.PBZrLs0D62ld.EKoevbmLqVHC.89" target="_blank">我国防疫政策为何不能“躺平”？国家卫健委回应</a>
+    <br>
+    <a href="https://news.cctv.com/2022/04/29/ARTIkpg4KkOkii391r2hzMF7220429.shtml?spm=C94212.PBi4fu284lJm.EqrnPf7WDfbU.49" target="_blank" >美疾控中心抗体研究：约75%美国儿童及青少年曾感染新冠</a>
+</div>
+</body>
+</html>
